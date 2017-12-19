@@ -1,1 +1,0 @@
-/* Colocar javascript compartida específico de la aplicacion web */
