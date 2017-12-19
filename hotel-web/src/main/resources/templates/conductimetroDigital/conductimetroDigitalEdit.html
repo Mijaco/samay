@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+</head>
+<body>
+	<!-- Modal content-->
+	<div class="modal-content" id="id-modal-content" th:fragment="form-edit-conductimetroDigital">
+				
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">
+				<span class="modal-title" id="idModalTitle" th:text="${#messages.msg('conductimetroDigital.registrar')}">Editar</span> 
+			</h4>
+			
+			<span id="idValEditModalTitle"  style="display:none;" th:text="${#messages.msg('conductimetroDigital.editar')}">Editar texto html</span>
+        	<span id="idValCrearModalTitle" style="display:none;" th:text="${#messages.msg('conductimetroDigital.crear')}">Crear texto html</span>
+		</div>
+				
+		<div class="modal-footer">
+		
+			<form name="form-edit-conductimetroDigital" id="form-edit-conductimetroDigital-id" method="post" 
+				  th:action="@{/conductimetroDigitalSave}" th:object="${conductimetroDigitalEditBean}"
+				  role="form">
+				  			
+				  	<fieldset class="col-md-12">
+						<legend></legend>								
+						 <div class="form-group center"> 
+						 	
+								<div class="form-group col-md-12 col-sm-12 col-xs-12">											                    
+				                    
+				                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-left" for="intArea"><span th:text="${#messages.msg('conductimetroDigital.area')}"></span></label>
+									<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+										<select class="form-control" id="intArea" name="intArea" th:field="*{intArea}" style="height: 33px;"></select>
+										<input type="hidden" id="intAreaHide" th:field="*{intAreaHide}" />	
+				                    	<input type="hidden" id="intCodigo" th:field="*{intCodigo}" />					                    			                    	 	   			                    	 
+				                    </div>
+				                    
+				                     <label class="control-label col-md-1 col-sm-1 col-xs-1 text-left" for="strCodEquipo"><span th:text="${#messages.msg('conductimetroDigital.codigo')}"></span></label>
+									<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+										 <input type="text"  class="form-control letraMayuscula" id="strCodEquipo"
+				                    		maxlength="20"  th:field="*{strCodEquipo}" onkeypress="return MYAPPL.soloNumerosLetrasGuiones(event)"
+				                    	 	/>	  
+				                    	 <input type="hidden" id="strCodEquipoHide" th:field="*{strCodEquipoHide}" />	      	 	   			                    	 
+				                    </div>	
+				                    	
+				                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-left" for="strEquipoMedicion"><span th:text="${#messages.msg('conductimetroDigital.equipoMedicion')}"></span></label>
+									<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+										<input type="text"  class="form-control letraMayuscula" id="strEquipoMedicion"
+				                    		maxlength="20"  th:field="*{strEquipoMedicion}" onkeypress="return MYAPPL.soloNumerosLetrasGuiones(event)"
+				                    	 	/>			                    	 			                    			                    	 	   			                    	 
+				                    </div>					                    
+				                   		                    			                    
+				 				</div>						
+				 				
+				 				<div class="form-group col-md-12 col-sm-12 col-xs-12 center">											                    
+				                   
+									<div class="form-group col-md-2 col-sm-2 col-xs-2 "></div>											          	 	   			                    	 
+				                   
+				                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-left" for="strModelo"><span th:text="${#messages.msg('conductimetroDigital.nroSerie')}"></span></label>
+									<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+										<input type="text"  class="form-control letraMayuscula" id="strNroSerie"
+				                    		maxlength="20"  th:field="*{strNroSerie}" onkeypress="return MYAPPL.soloNumerosLetrasGuiones(event)"
+				                    	 	/>					                    	 	   			                    	 
+				                    </div>	
+				                    
+				                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-left" for="strEspecialista"><span th:text="${#messages.msg('conductimetroDigital.especialista')}"></span></label>
+									<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+										<select class="form-control" id="strEspecialista" name="strEspecialista" th:field="*{strEspecialista}" style="height: 33px;"></select>
+										<input type="hidden" id="strEspecialistaHide" th:field="*{strEspecialistaHide}" />                    	 	   			                    	 
+				                    </div>	
+				                    
+				                    <div class="form-group col-md-2 col-sm-2 col-xs-2 "></div>		                    			                    
+				 				</div>				 							 							 									
+						 	 	
+						 </div>
+					</fieldset>
+					
+					<fieldset class="col-md-12">
+						
+						<div class="col-md-12 espaciado-superior">						
+							
+							<div class="col-md-7">
+								<div class="col-md-12" style="padding: 0px;">
+									<div class="panel panel-success">
+										<div class="panel-heading">
+											<label class="control-label" th:text="${#messages.msg('conductimetroDigital.calibracion')}"></label>
+										</div>										
+										<div class="panel-body">
+											<div class="col-md-8" style="padding: 0px;">
+												<div class="row">										                    
+								                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="nombre"><span th:text="${#messages.msg('conductimetroDigital.nombre')}"></span></label>
+													<div class="form-group col-md-3 col-sm-3 col-xs-3">
+														<input type="text" maxlength="20" class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strCalNombre}" />			                    	 		                    	 	   			                    	 
+								                    </div>	
+								                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="lote"><span th:text="${#messages.msg('conductimetroDigital.lote')}"></span></label>
+													<div class="form-group col-md-3 col-sm-3 col-xs-3">
+														<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strCalLote}" />			                    	 		                    	 	   			                    	 
+								                    </div>												                    			                    
+									 			</div>
+									 			
+									 			<div class="row">										                    
+								                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="codigo"><span th:text="${#messages.msg('conductimetroDigital.codigo')}"></span></label>
+													<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+														<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strCalCodigo}" />			                    	 		                    	 	   			                    	 
+								                    </div>	
+											        <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="caducidad"><span th:text="${#messages.msg('conductimetroDigital.caducidad')}"></span></label>
+													<div class="form-group col-md-3 col-sm-3 col-xs-3">
+														<input type="text" id="strCalCaducidad1" class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strCalCaducidad}"/>			                    	 		                    	 	   			                    	 
+								                    </div>  			                    
+									 			</div>
+									 			
+									 			<div class="row">										                    
+								                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="marca"><span th:text="${#messages.msg('conductimetroDigital.marca')}"></span></label>
+													<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+														<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strCalMarca}"/>			                    	 		                    	 	   			                    	 
+								                    </div>	
+												    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="especificacion"><span th:text="${#messages.msg('conductimetroDigital.especificacion')}"></span></label>
+													<div class="form-group col-md-3 col-sm-3 col-xs-3  ">
+														<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strCalEspecificacion}" />			                    	 		                    	 	   			                    	 
+								                    </div>	                			                    
+									 			</div>
+									 			
+								 			</div>
+								 			
+								 			<div class="col-md-4" style="padding-right: 2px;">
+												<div class="panel panel-success">
+													<div class="panel-heading">
+														<label class="control-label" th:text="${#messages.msg('conductimetroDigital.kcelda')}"></label>
+													</div>										
+													<div class="panel-body">
+														<div class="col-md-12" style="padding: 0px;">
+																						                    
+										                    <label class="control-label espacioDiv col-md-3 col-sm-3 col-xs-3 text-left" for="strkmax"><span th:text="${#messages.msg('conductimetroDigital.kmax')}"></span></label>
+															<div class="form-group col-md-9 col-sm-9 col-xs-9  ">
+																<input type="text"  class="form-control numero" name="strKmax"  id="strKmax"  th:field="*{strKmax}" onkeypress="return MYAPPL.soloNumerosPunto(event)" />			                    	 		                    	 	   			                    	 
+										                    </div>	
+										                    
+										                    <div class="col-md-3 espacioDiv col-sm-3 col-xs-3"><span th:text="${#messages.msg('conductimetroDigital.kmin')}"></span></div>
+										                    <div class="form-group  col-md-9 col-sm-9 col-xs-9">
+																<input type="text"  class="form-control numero" id="strKmin" onkeypress="return MYAPPL.soloNumerosPunto(event)"
+										                    		maxlength="20" th:field="*{strKmin}" />			                    	 		                    	 	   			                    	 
+										                    </div>										                    											                    			                    
+											 				
+											 				<div class="row">										                    
+										                    
+																<div class="form-group espacioDiv col-md-5 col-sm-5 col-xs-5  ">
+																	<input type="text" maxlength="18" class="form-control numero" id="strValor1" th:field="*{strValor1}" onkeypress="return MYAPPL.soloNumerosPunto(event)" />			                    	 		                    	 	   			                    	 
+											                    </div>	
+											                    <div class="form-group espacioDiv col-md-2 col-sm-2 col-xs-2  "><span th:text="${#messages.msg('conductimetroDigital.masMenos')}"></span></div>
+											                    <div class="form-group espacioDiv col-md-5 col-sm-5 col-xs-5">
+																	<input type="text"  class="form-control numero" id="strValor2" onkeypress="return MYAPPL.soloNumerosPunto(event)"
+											                    		maxlength="18" th:field="*{strValor2}" />			                    	 		                    	 	   			                    	 
+											                    </div>	
+										                    												                    			                    
+											 				</div>
+										 				</div>
+													</div>
+												</div>
+											</div>								 		
+								 																						
+										</div>									
+									
+									</div>
+								
+								</div>							
+							</div>
+							
+							<div class="col-md-5">
+								<div class="col-md-12" style="padding: 0px;">
+									<div class="panel panel-success">
+										<div class="panel-heading">
+											<label class="control-label" th:text="${#messages.msg('conductimetroDigital.verificacion')}"></label>
+										</div>
+										<div class="panel-body container-fluid ">
+											
+											<div class="row">										                    
+							                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="nombre"><span th:text="${#messages.msg('conductimetroDigital.nombre')}"></span></label>
+												<div class="form-group col-md-3 col-sm-3 col-xs-3  ">
+													<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strVerNombre}" />			                    	 		                    	 	   			                    	 
+							                    </div>	
+											     <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="lote"><span th:text="${#messages.msg('conductimetroDigital.lote')}"></span></label>
+												<div class="form-group col-md-3 col-sm-3 col-xs-3  ">
+													<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strVerLote}" />			                    	 		                    	 	   			                    	 
+							                    </div>	                			                    
+								 			</div>
+								 			
+								 			<div class="row">										                    
+							                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="codigo"><span th:text="${#messages.msg('conductimetroDigital.codigo')}"></span></label>
+												<div class="form-group col-md-3 col-sm-3 col-xs-3  ">
+													<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strVerCodigo}" />			                    	 		                    	 	   			                    	 
+							                    </div>	
+												<label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="caducidad"><span th:text="${#messages.msg('conductimetroDigital.caducidad')}"></span></label>
+												<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+													<input type="text" id="strVerCaducidad1" class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strVerCaducidad}"  />			                    	 		                    	 	   			                    	 
+							                    </div>	                    			                    
+								 			</div>
+								 			
+								 			<div class="row">										                    
+							                    <label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="marca"><span th:text="${#messages.msg('conductimetroDigital.marca')}"></span></label>
+												<div class="form-group col-md-3 col-sm-3 col-xs-3 ">
+													<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strVerMarca}" />			                    	 		                    	 	   			                    	 
+							                    </div>	
+							               		<label class="control-label col-md-3 col-sm-3 col-xs-3 text-left" for="especificacion"><span th:text="${#messages.msg('conductimetroDigital.especificacion')}"></span></label>
+												<div class="form-group col-md-3 col-sm-3 col-xs-3  ">
+													<input type="text"  class="form-control letraMayuscula" onkeypress="return MYAPPL.soloNumerosLetrasGuionesComas(event)" th:field="*{strVerEspecificacion}"  />			                    	 		                    	 	   			                    	 
+							                    </div>									                    			                    
+								 			</div>
+								 											 																						
+										</div>
+									
+									</div>
+								
+								</div>	
+							</div>
+						</div>
+					</fieldset>
+					 					  	 
+					 
+					 <fieldset class="col-md-12 col-sm-12 col-xs-12" th:fragment="buttons">
+						<span><br /></span>
+						<div class="form-group col-sm-12">
+							<div class="wrapper text-center">
+								<div class="btn-group">
+									<button type="submit" class="btn btn-primary btn-sm"
+										id="guardarButton" th:value="actualizar">Guardar</button>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="btn btn-default btn-sm"
+										data-dismiss="modal">Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</fieldset>  					
+					       				
+			</form>						
+			
+		</div>
+	</div>
+</body>
+</html>

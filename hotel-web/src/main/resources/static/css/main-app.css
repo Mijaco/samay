@@ -1,0 +1,327 @@
+/* Colocar Hojas de Estilos compartido específico de la aplicacion web */
+
+label {
+	display: inline !important;
+}
+
+textarea {
+    resize: none;
+    white-space: nowrap;
+}
+
+legend {
+	padding: 10px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*  para tabla resumen */
+table.data-present>tbody>tr>th {
+    background-color: #016dac;
+    background-image: -moz-linear-gradient( top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 51%, rgba(255,255,255,0.0) 100%);
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(50%,rgba(255,255,255,0.2)), color-stop(51%,rgba(255,255,255,0.1)), color-stop(100%,rgba(255,255,255,0.0)));
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    /* text-shadow: 0 1px 1px #e8ebee; */
+    text-align: center;
+}
+
+
+.right-align {
+	text-align: right !important;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.center-align {
+	text-align: center;
+}
+
+/* PARA CENTRADO VERTICAL */
+.flex-parent{
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+ 
+.flex-child{
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*Clases*/
+.espaciado-superior {
+	padding-top: 15px;
+}
+
+.mensaje-negrita {
+	font-weight: bold !important;
+}
+
+.celda-default {
+	text-align: center;
+	font-size: 10px !important;
+}
+
+.celda-sin-dato {
+	background: #c4c6cc !important;
+	font-size: 10px !important;
+}
+
+.celda-dato-igual {
+	color: white !important;
+	background: #5cb85c !important;
+	text-align: center;
+	font-size: 10px !important;
+}
+
+.celda-dato-diferente {
+	color: white !important;
+	background: #d9534f !important;
+	text-align: center;
+	font-size: 10px !important;
+}
+
+.label-name {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.pickListButtons {
+  padding: 10px;
+  text-align: center;
+}
+
+.pickListButtons button {
+  margin-bottom: 5px;
+}
+
+.pickListSelect {
+  height: 200px !important;
+}
+
+/* @media (min-width: 1200px){ */
+/* 	.verticalPick { */
+/*    		 margin-top: 100px; */
+/* 	} */
+/* } */
+
+@media (min-width: 768px){
+
+	.verticalPick {
+   		 margin-top: 90px;
+	}
+}
+
+.ancho-Sub-DataTable {
+  width: 1100px !important;
+  align: center;
+}
+
+.letraMayuscula{
+    text-transform:uppercase;
+    padding-right: 10px !important;
+	padding-left: 10px !important;	
+}
+
+.numero{
+	padding-right: 3px !important;
+	padding-left: 3px !important;	
+}
+
+.espacioDiv{
+	padding-right: 10px !important;
+	padding-left: 10px !important;	
+}
+
+.container-fluid {
+  height: 247px !important;
+}
+
+.alineacionCentral {
+	    text-align: center !important;
+}
+
+.alineacionIzquierda {
+	    text-align: left !important;
+}
+
+.border-plan-operativo{
+	border: 1px solid #D8D8D8;
+}
+
+.border-plan-operativo{
+	border: 1px solid #D8D8D8;
+}
+
+.negrita{
+	font-weight: bold;
+}
+
+ .margen-reporte-plan{
+	 margin:3px 3px 0px;
+}
+
+.border-plan-operativo{
+	border: 1px solid #D8D8D8;
+}
+
+.border-plan-operativo{
+	border: 1px solid #D8D8D8;
+}
+
+.negrita{
+	font-weight: bold;
+}
+
+ .margen-reporte-plan{
+	 margin:3px 3px 0px;
+}
+
+.my_checkbox {
+    width:3vw !important;
+    height:3vh !important;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 650px;
+    overflow-y: auto;
+}
+
+.alto_imput {
+  height: 30px !important;
+}
+
+.demo-placeholder {
+	height: 450px!important;
+}
+
+.tamanoTable {
+  height: 450px !important;
+}
+
+.espaciado-superior2 {
+	padding-top: 40px;
+}
+
+/*USO EXCLUSIVO DE CAUDALES*/
+
+	/* para tabla de historial de cargas */
+table#myTableHistorialCargas>tbody>tr {
+	height: 34px !important;
+}
+/* para tabla de maniobras */
+table#myManiobras>tbody>tr {
+	height: 34px !important;
+}
+
+	.espaciado-inferior {
+	padding-bottom: 15px;
+}
+
+	.adjuste-inner-text {
+	word-wrap: break-word !important;
+}
+
+.fancyTable td, .fancyTable th{
+	min-height: 0px !important;
+	*min-height: 0px !important;
+	_min-height: 0px !important;
+}
+
+
+/*Para el alto de la cabecera de las tablas*/
+.DataTables_sort_wrapper { 
+	height: 25px!important;
+}
+
+table.dataTable tbody th {
+  vertical-align: middle !important;
+}
+
+/* PARA DIVISIONES DE INFO */
+.end-segment{
+	padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
+}
+
+/* PARA LA TABLA DE RESUMEN REPRESAS  */
+#myTableReporteRepresas th:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.table-resumen {
+    height: 550px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+    
+.demo-placeholder {
+	height: 450px!important;
+}
+
+/* LEYENDA PARA GRAFICOS */
+#legendContainer {
+    background-color: #fff;
+    padding: 2px;
+    margin-bottom: 8px;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px solid #E6E6E6;
+    display: inline-block;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+/*BEGIN: PARA CENTRADO VERTICAL DE MODALES*/
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+/*END: PARA CENTRADO VERTICAL DE MODALES*/
+
+/*PARA ANCHO DE MULTISELECT*/
+.multiselect-container {
+   width: 100% !important;
+   overflow-x: auto !important;
+}
+
+/*PARA QUITAR X DE IE*/
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+/*QUITAR ICONO DE ORDENAMIENTO EN DATATBLE JQUERY UI*/
+.DataTables_sort_icon  {
+	display: none !important;
+}
+
+
+

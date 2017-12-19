@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+	<div th:fragment="header" class="page-header"  style="margin:0px;" >
+		<div class="text-center" style="">
+			<span th:if="${#httpServletRequest.userPrincipal==null}">&nbsp;</span>
+			<span th:if="${#httpServletRequest.userPrincipal!=null}" th:text="${'Usuario: '+#httpServletRequest.userPrincipal.name+'&nbsp;'}"></span>
+	    </div>
+		<h1 class="text-center" style="background-color:#FFFFFF;margin-top: 0;">
+		    <a th:href="@{/}" style="text-decoration: none!important;">
+			    <img alt="Spring" id="logo-sistema" 
+				src="../../../images/company_logo.gif"
+				th:src="@{/images/hot.jpg}" title=""
+				class="" />
+		    </a>
+			<span >UNKNOWN</span>		
+		</h1>
+	</div>
+</body>
+</html>

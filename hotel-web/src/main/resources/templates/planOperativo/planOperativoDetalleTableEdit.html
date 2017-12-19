@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+</head>
+<body>
+	<!-- Modal content-->
+	<div class="modal-content" id="id-modal-content-parametro" th:fragment="form-edit-tablaPoisson">
+	
+		<div class="modal-header">
+			<button type="button" id="idModalParametroDetalle"  class="close">&times;</button>
+			<h4 class="modal-title">
+				<span class="modal-title" th:text="${#messages.msg('parametro.plan.editar')}">Editar</span> 
+			</h4>
+			<!-- Texto html escondido -->
+			<span id="idValEditModalTitle"  style="display:none;" th:text="${#messages.msg('plan.operativo.msg.plan.operativo.editar')}">Editar texto html</span>
+        	<span id="idValCrearModalTitle" style="display:none;" th:text="${#messages.msg('plan.operativo.msg.plan.operativo.crear')}">Crear texto html</span>
+        	
+		</div>
+		
+		<div class="modal-footer">
+			<form name="form-edit-tablaPoisson" id="form-edit-parametroplan-id" method="post" 
+				  th:action="@{/parametroPlanSave}" th:object="${parametroPlanEditBean}"
+				  role="form">
+				  				
+				  	<input type="text" class="hidden"  th:field="*{codplan}"/>
+			        <input type="text" class="hidden"  th:field="*{codsxp}"/>
+			        
+			        <input type="text" class="hidden"  th:field="*{codarea}"/>
+			        <input type="text" class="hidden"  th:field="*{codact}"/>
+			        <input type="text" class="hidden"  th:field="*{codsubact}"/>
+<!-- 				  	<input type="hidden" th:field="*{parametro}"/>		 -->
+				  						
+					 <div class="row form-group"> 
+							<div class="col-md-4 col-sm-4 col-xs-4">
+								 <div class="row">
+								 	<label class="control-label col-md-6 col-sm-6 col-xs-6 text-left" for="parametro"><span th:text="${#messages.msg('parametro.plan.table.col2')}"></span></label>
+									<div class="form-group col-md-6 col-sm-6 col-xs-6 ">
+			                    	<input  type="text" class="form-control"
+			                    		   maxlength="60"  th:field="*{parametro}" th:value="${parametroPlanEditBean.parametro}"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col2')}"/>
+			                      	</div>
+								  </div>
+								  
+								  <div class="row">
+								 	<label class="control-label col-md-6 col-sm-6 col-xs-6 text-left" for="medida"><span th:text="${#messages.msg('parametro.plan.table.col3')}"></span></label>
+									<div class="form-group col-md-6 col-sm-6 col-xs-6 ">
+									<select th:field="*{medida}" class="form-control"  id="medida" name="cboAreas" style="height: 33px;"></select>
+									</div>
+									
+<!-- 									<div class="form-group col-md-6 col-sm-6 col-xs-6 "> -->
+<!-- 			                    	<input type="text" class="form-control"  -->
+<!-- 			                    		   maxlength="5"  th:field="*{medida}" -->
+<!-- 			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col3')}"/> -->
+			                    	 	   			                    	 
+<!-- 			                      	</div> -->
+								  </div>
+								  
+								  <div class="row">
+								 	<label class="control-label col-md-6 col-sm-6 col-xs-6 text-left" for="propuesta"><span th:text="${#messages.msg('parametro.plan.table.col4')}"></span></label>
+									<div class="form-group col-md-6 col-sm-6 col-xs-6 ">
+			                    	<input type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{propuesta}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col4')}"/>
+			                    	 	   			                    	 
+			                      	</div>
+								  </div>
+			                  
+			 			  </div>
+			 				
+			 			<div class="col-md-8 col-sm-8 col-xs-8 ">
+			 				<div class="row ">
+			 					<label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes1"><span th:text="${#messages.msg('parametro.plan.table.col5')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes1" type="text" class="form-control"
+			                    		   maxlength="5"  th:field="*{mes1}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col5')}"/>
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes2"><span th:text="${#messages.msg('parametro.plan.table.col6')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input name="mes2" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes2}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col6')}"/>
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" ><span th:text="${#messages.msg('parametro.plan.table.col7')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input  type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes3}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col7')}"/>
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes4"><span th:text="${#messages.msg('parametro.plan.table.col8')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes4" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes4}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col8')}"/>
+			                    </div>
+			               	 </div>
+
+			               <div class="row">
+			 					<label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes5"><span th:text="${#messages.msg('parametro.plan.table.col9')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes5" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes5}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col9')}"/>
+			                    	 	   			                    	 
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes6"><span th:text="${#messages.msg('parametro.plan.table.col10')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes6" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes6}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col10')}"/>
+			                    	 	   			                    	 
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes7"><span th:text="${#messages.msg('parametro.plan.table.col11')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes7" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes7}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col11')}"/>
+			                    </div>
+			                    
+			                     <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes8"><span th:text="${#messages.msg('parametro.plan.table.col12')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes8" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes8}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col12')}"/>
+			                    </div>
+			                     
+			               </div>
+
+			               <div class="row form-group">
+			 					<label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes9"><span th:text="${#messages.msg('parametro.plan.table.col13')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes9" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes9}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col13')}"/>
+			                    	 	   			                    	 
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes10"><span th:text="${#messages.msg('parametro.plan.table.col14')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes10" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes10}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col14')}"/>
+			                    	 	   			                    	 
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes11"><span th:text="${#messages.msg('parametro.plan.table.col15')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes11" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes11}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col15')}"/>
+			                    </div>
+			                    
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-1 text-center" for="mes12"><span th:text="${#messages.msg('parametro.plan.table.col16')}"></span></label>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+			                    	<input id="mes12" type="text" class="form-control" 
+			                    		   maxlength="5"  th:field="*{mes12}" onkeypress="return MYAPPL.soloNumeros(event)"
+			                    	 	   th:placeholder="${#messages.msg('parametro.plan.table.col16')}"/>
+			                    </div>
+			               </div>
+			 		</div>
+			 				
+			 							 									
+					 </div> 	
+			 
+					 <fieldset class="col-md-12 col-sm-12 col-xs-12" th:fragment="buttons">
+						<span><br /></span>
+						<div class="form-group col-sm-12">
+							<div class="wrapper text-center">
+								<div class="btn-group">
+									<button type="submit" class="btn btn-primary btn-sm"
+										id="guardarButton" th:value="actualizar">Guardar</button>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="btn btn-default btn-sm" id="cancelParametroDetalleEdit">Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</fieldset>  	          				
+			</form>
+		</div>
+	</div>
+</body>
+</html>
