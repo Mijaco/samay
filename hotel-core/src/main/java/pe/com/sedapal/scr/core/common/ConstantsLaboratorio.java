@@ -19,6 +19,7 @@ public class ConstantsLaboratorio {
 	// CONTANTES PARA MANTENIMIENTO ACTIVIDADES : BUSCAR
 	public static final String PRC_BUSCA_ACTIVIDAD = "PRC_BUSCA_ACTIVIDAD";
 
+
 	public static final String PRC_GET_ACTIVIDADXAREA = "PRC_GET_ACTIVIDADXAREA";
 
 	// CONTANTES PARA MANTENIMIENTO ACTIVIDADES: CAMPOS AUDITORIA
@@ -731,6 +732,15 @@ public class ConstantsLaboratorio {
 	
 //	public static final String PRC_BUSCA_ENSAYOCLORO = "PRC_BUSCA_ENSAYOCLORO";
 //	public static final String PRC_BUSCA_ENSAYOCLORO = "PRC_BUSCA_ENSAYOCLORO";
+	
+	public static final String PCK_PRODUCTOS = "PCK_PRODUCTOS";
+	
+	public static final String PRC_PRODUCTOS_FREQUENTES = "PRC_PRODUCTOS_FREQUENTES";
+	public static final String PRC_PRODUCTOS_FILTRADOS = "PRC_PRODUCTOS_FILTRADOS";
+	
+	public static final String PAR_NOMBRE = "PAR_NOMBRE";
+	public static final String PAR_VOLUME = "PAR_VOLUME";
+
 	
 	
 	
