@@ -1,0 +1,35 @@
+				<div th:fragment="result">
+				<div class="result-body panel-body ">
+				
+					<div class="col-lg-12 col-md-12 col-xs-12" th:object="${resultado}">
+					
+<!-- 					<div th:each="actividad,stat : *{actividades}"   class="row actividad border-plan-operativo margen-reporte-plan" >   -->
+<!--         	<div class="col-md-2 col-sm-2 col-xs-2 text-center" th:text="${actividad.descripcion}" ></div> -->
+<!--         	<input id="strValorPoisson" type="hidden" class="form-control" 	maxlength="20"  th:field="*{actividades[__${stat.index}__].descripcion}"/> -->
+        	        	
+<!--         	<div class="col-md-10 col-sm-10 col-xs-10"> -->
+<!--               <div th:each="subactividad,ind : *{actividades[__${stat.index}__].subactividades}"   class="row subactividad subactcalcular border-plan-operativo" > -->
+						
+						<div th:each="producto,stat : *{productos}" class="col-lg-3 col-md-3 col-xs-6 panel panel-default " >
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" >
+									<h1 class="text-center" th:text="${producto.nombre}">San Luis</h1>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" >
+									<h1 class="text-center" th:text="${producto.precio}">S/ 1.50</h1>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" >
+									<label class="text-center">Cantidad/Medida</label>
+									<label class="text-center" th:text="${producto.volumen}">750 ml</label>
+								</div>
+								<br/><br/><br/><br/>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding:10px">
+								 <button type="button" onclick="filtrarReportePorArea();" class="btn btn-success text-center" ><span class="glyphicon glyphicon-shopping-cart"></span><label>Vender</label></button>
+								 <button type="button" id="idBtnBuscarTablaPoisson"  onclick="mostrarDetalle();" class="btn btn-primary text-center" ><span class="glyphicon glyphicon-search"></span><label>Detalle</label></button>
+								</div>
+						</div>
+						
+						
+					</div>
+
+				</div>
+				</div>
