@@ -22,7 +22,7 @@ $(document).ready(function() {
 	
 	//CARGA DE LOS DISTRITOS EN LA BUSQUEDA
 //	cargarCombo("listLambdas","#cboAreas");
-	enableClientSideValidationClima();
+//	enableClientSideValidationClima();
 
 });
 
@@ -66,7 +66,7 @@ function enableClientSideValidationClima() {
 		var datos = {}
 		datos.nombre = $("#name").val();
 //		e.preventDefault();
-		console.log("Buscando SAN")
+		
 		
 		$.ajax({
 		type: 'GET',
@@ -86,17 +86,19 @@ function enableClientSideValidationClima() {
 }
 
 
-function buscarProducto(nombre) {
+function filtrarProductos() {
 	MYAPPL.blockPageLoad();
 	var data = {};
-	data.nombre = nombre
+	data.nombre = $("#name").val();
+	console.log("Buscando : " + data.nombre)
+	
 	$.ajax({
-		type: 'POST',
+		type: 'GET',
 		data: data,
 		url: 'buscarProductos',
 		success: function(result) {
-			$('.result-body').replace(result);
-			enableClientSideValidationClima();
+			console.log("result: " + result)
+			$('.result-body').html(result);
 		},complete: function() {
 			$.unblockUI();
 			

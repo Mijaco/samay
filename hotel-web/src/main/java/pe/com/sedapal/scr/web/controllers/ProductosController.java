@@ -66,7 +66,7 @@ public class ProductosController {
 		try {
 			LOG.info("filtrando productos: ");
 			ResultadoBusqueda rs = new ResultadoBusqueda();
-			String nombre = allRequestParams.get("nombre");
+			String nombre = allRequestParams.get("nombre")==null? null : allRequestParams.get("nombre").toUpperCase();
 			LOG.info("nombre: " + nombre);
 			
 			List<Producto> lista = productoService.fitrarProductos(nombre, null, null);
@@ -78,8 +78,7 @@ public class ProductosController {
 			e.printStackTrace();
 		}
 		return "productos/result-search :: result";
-		
-		
+	
 	}
 	
 	

@@ -14,20 +14,21 @@
 <body>
 	<div layout:fragment="content">
 		<div class="col-lg-12 col-md-12 col-xs-12 " >
-						<form name="form-search-product" id="form-search-product" method="get" 
-				 		  role="form">
+						<div name="form-search-product" id="form-search-product">
 						<div class="form-group panel-body containerform form-group">
 							<label class="control-label col-md-2 col-sm-2 col-xs-2 text-right no-padding">Buscar Producto</label>
 							<div class="col-md-4 col-sm-4 col-xs-4">
-               					<input type="text" class="form-control" id="name" name ="nombre" style="width:100%"/>
+               					<input type="text" class="form-control" id="name" name ="nombre" style="width:100%" onsubmit="" />
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-3"></div>
 							<div class="col-md-3 col-sm-3 col-xs-3 ">
-									<button type="submit" class="btn btn-primary btn-sm" id="guardarButton" th:value="actualizar">Buscar</button>
+									<button type="button" class="btn btn-primary btn-sm" id="guardarButton" onclick="filtrarProductos();" th:value="Buscar"></button>
 							</div>
-							
 						</div>
-						</form>
+						</div>
+						
+						
+						
 		</div>
 	
 		<div class="col-lg-12 col-md-12 col-xs-12">
