@@ -4,17 +4,17 @@ var MYAPPL = MYAPPL || {};
 MYAPPL.lastTime = Date.now();
 
 //FUNCION PARA QUITAR EL ENTER
-MYAPPL.removeInputEnter = function () { 
-	jQuery(document).ready(function(){
-	    jQuery('input').keypress(function(event){
-	        if (event.which == 13) {
-	            event.preventDefault();
-	            return false;   
-	        }
-	    });
-	});
-}
-MYAPPL.removeInputEnter();
+//MYAPPL.removeInputEnter = function () { 
+//	jQuery(document).ready(function(){
+//	    jQuery('input').keypress(function(event){
+//	        if (event.which == 13) {
+//	            event.preventDefault();
+//	            return false;   
+//	        }
+//	    });
+//	});
+//}
+//MYAPPL.removeInputEnter();
 
 //FUNCION PARA QUE SOLO PERMITA INGRESAR LETRAS
 MYAPPL.soloLetras = function (e){
