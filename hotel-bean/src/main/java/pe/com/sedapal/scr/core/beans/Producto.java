@@ -58,6 +58,13 @@ public class Producto {
 	public void setMedida(String medida) {
 		this.medida = medida;
 	}
+
+	@Override
+	public String toString() {
+		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", descripcion="
+				+ descripcion + ", volumen=" + volumen + ", medida=" + medida + "]";
+	}
+	
 	
 	
 	

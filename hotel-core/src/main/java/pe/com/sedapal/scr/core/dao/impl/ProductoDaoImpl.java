@@ -81,7 +81,7 @@ public class ProductoDaoImpl implements IProductoDao{
 	    	caller.withCatalogName(ConstantsLaboratorio.PCK_PRODUCTOS).withProcedureName(ConstantsLaboratorio.PRC_PRODUCTOS_FILTRADOS).declareParameters(
 	    			new SqlParameter(ConstantsLaboratorio.PAR_NOMBRE, Types.VARCHAR),
 					new SqlParameter(ConstantsLaboratorio.PAR_DESCRI, Types.VARCHAR),
-					new SqlParameter(ConstantsLaboratorio.PAR_VOLUME, OracleTypes.NUMBER),
+					new SqlParameter(ConstantsLaboratorio.PAR_VOLUME, Types.VARCHAR),
 							new SqlOutParameter(ConstantsCommon.PAR_OUT_CURSOR, OracleTypes.CURSOR, new RowMapper<Producto>() {
 								@Override
 								public Producto mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -101,7 +101,7 @@ public class ProductoDaoImpl implements IProductoDao{
 	    	MapSqlParameterSource params = new MapSqlParameterSource();
 			params.addValue(ConstantsLaboratorio.PAR_NOMBRE, nombre);
 			params.addValue(ConstantsLaboratorio.PAR_DESCRI, descripcion);
-			params.addValue(ConstantsLaboratorio.PAR_VOLUME, 1);
+			params.addValue(ConstantsLaboratorio.PAR_VOLUME, "1");
 
 			Map<String,Object>  results = caller.execute(params);
 			lstRetorno =  (List<Producto>) results.get(ConstantsCommon.PAR_OUT_CURSOR);
