@@ -108,4 +108,33 @@ function filtrarProductos() {
 
 
 
+function addNewProduct() {
+
+	$.ajax({
+		type: 'GET',
+		url: 'productNew', 
+		success: function(result) {
+			
+			console.log(">> " + result);
+			$('#id-modal-content').replaceWith(result);
+			
+//			if(id != 0){
+//				$('#idModalTitle').html($('#idValEditModalTitle').html());
+//				$("#intCodLambda").attr('disabled', 'disabled');
+//				$("#strCodIgx").attr('disabled', 'disabled');
+//			}else{
+//				$('#idModalTitle').html($('#idValCrearModalTitle').html());
+//			}
+//			enableValidationRules();
+		},complete: function() {
+			$('#modal-registra-producto').modal('show');
+			$.unblockUI();
+			
+		}
+	});
+}
+
+
+
+
 

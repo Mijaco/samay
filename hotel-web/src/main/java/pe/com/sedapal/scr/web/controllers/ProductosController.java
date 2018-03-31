@@ -16,13 +16,17 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pe.com.sedapal.scr.core.beans.Producto;
 import pe.com.sedapal.scr.core.beans.ResultadoBusqueda;
+import pe.com.sedapal.scr.core.beans.TablaPoissonBean;
 import pe.com.sedapal.scr.core.services.IProductoService;
 import pe.com.sedapal.scr.web.common.Constants;
 
@@ -79,6 +83,17 @@ public class ProductosController {
 		}
 		return "productos/result-search :: result";
 	
+	}
+	
+	@RequestMapping(value = "/productNew", method = RequestMethod.GET)
+	public String productNew(
+			@ModelAttribute("tablaPoissonSearchBean") TablaPoissonBean tablaPoissonSearchBean,
+			@ModelAttribute("productAddBean") TablaPoissonBean tablaPoissonEditBean, Model model) throws Exception {
+			
+		    Producto productAddBean = new Producto();
+			
+			model.addAttribute("productAddBean", productAddBean);
+			return "productos/product-add :: form-add-product";
 	}
 	
 	
