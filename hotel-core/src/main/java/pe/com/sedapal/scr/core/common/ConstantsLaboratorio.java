@@ -740,6 +740,10 @@ public class ConstantsLaboratorio {
 	
 	public static final String PAR_NOMBRE = "PAR_NOMBRE";
 	public static final String PAR_VOLUME = "PAR_VOLUME";
+	
+	public static final String MENSAJE_TIPO = "mensajeTipo";
+	public static final String MENSAJE_ERROR = "mensajeError";
+	
 
 	
 	

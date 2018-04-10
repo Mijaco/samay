@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import pe.com.sedapal.common.core.utils.ConstantsCommon;
 import pe.com.sedapal.scr.core.beans.Producto;
 import pe.com.sedapal.scr.core.beans.ResultadoBusqueda;
 import pe.com.sedapal.scr.core.beans.TablaPoissonBean;
@@ -100,13 +101,25 @@ public class ProductosController {
 	
 	@RequestMapping(value = "/productSave", method = RequestMethod.POST)
 	public String insertTablaPoisson(ModelMap model, HttpServletRequest request, HttpSession session,
-			@ModelAttribute("productBean") Producto producto){
+			@ModelAttribute("productBean") Producto producto) {
 
 		String strMensajeTipo = "";
 		String strMensajeError = "";
+		try {
+
+			LOG.info("codigo producto: " + producto.getCodigo());
+
+			strMensajeTipo = ConstantsCommon.GRABADO_OK;
+		} catch (Exception e) {
+			strMensajeTipo = ConstantsCommon.GRABADO_NO_OK;
+			strMensajeError = e.getMessage();
+			e.printStackTrace();
+		}
 		
-		LOG.info("codigo producto: " + producto.getCodigo());
-		return ConstantsLaboratorio.PATH_RESULT_GENERICSAVE; 
+	model.addAttribute(Constants.MENSAJE_MOSTRAR,"");
+	model.addAttribute(ConstantsLaboratorio.MENSAJE_TIPO, strMensajeTipo);
+	model.addAttribute(ConstantsLaboratorio.MENSAJE_ERROR, strMensajeError);
+	return ConstantsLaboratorio.PATH_RESULT_GENERICSAVE; 
 	
 	}
 	
