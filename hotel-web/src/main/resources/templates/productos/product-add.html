@@ -19,7 +19,7 @@
 		
 		<div class="modal-footer">
 			<form name="form-add-product" id="form-add-product" method="post" 
-				  th:action="@{/tablaPoissonSave}" th:object="${productAddBean}"
+				  th:action="@{/productSave}" th:object="${productBean}"
 				  role="form">
 				  											
 					 <div class="form-group center"> 
@@ -28,7 +28,7 @@
 			                    <label class="control-label col-md-2 col-sm-2 col-xs-2 text-center" for="intCodLambda"><span>Cod producto</span></label>
 								<div class="form-group col-md-2 col-sm-2 col-xs-2 ">
 			                    	<input id="intCodLambda" type="text" class="form-control" onkeypress="return MYAPPL.soloNumerosSinPunto(event)"
-			                    		   maxlength="20"  th:field="*{codigo}"
+			                    		   maxlength="20"  th:field="${productBean.codigo}"
 			                    	 	   placeholder="Cod producto"/>
 			                    	 	   			                    	 
 			                    </div>	

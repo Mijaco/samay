@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pe.com.sedapal.scr.core.beans.Producto;
 import pe.com.sedapal.scr.core.beans.ResultadoBusqueda;
 import pe.com.sedapal.scr.core.beans.TablaPoissonBean;
+import pe.com.sedapal.scr.core.common.ConstantsLaboratorio;
 import pe.com.sedapal.scr.core.services.IProductoService;
 import pe.com.sedapal.scr.web.common.Constants;
 
@@ -91,11 +92,23 @@ public class ProductosController {
 			@ModelAttribute("productAddBean") TablaPoissonBean tablaPoissonEditBean, Model model) throws Exception {
 			
 		    Producto productAddBean = new Producto();
+		    productAddBean.setCodigo("09");
 			
-			model.addAttribute("productAddBean", productAddBean);
+			model.addAttribute("productBean", productAddBean);
 			return "productos/product-add :: form-add-product";
 	}
 	
+	@RequestMapping(value = "/productSave", method = RequestMethod.POST)
+	public String insertTablaPoisson(ModelMap model, HttpServletRequest request, HttpSession session,
+			@ModelAttribute("productBean") Producto producto){
+
+		String strMensajeTipo = "";
+		String strMensajeError = "";
+		
+		LOG.info("codigo producto: " + producto.getCodigo());
+		return ConstantsLaboratorio.PATH_RESULT_GENERICSAVE; 
+	
+	}
 	
 	public String obtenerMensaje(String messageProp){
 		return messageSource.getMessage(messageProp, new Object[] {}, Locale.US);
